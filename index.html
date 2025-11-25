@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h2>My Dashboard</h2>
+        <button id="addUserBtn">Add User</button>
+    </header>
+
+    <aside class="sidebar">
+        <ul>
+            <li>Home</li>
+            <li>Users</li>
+            <li>Orders</li>
+            <li>Settings</li>
+        </ul>
+    </aside>
+
+    <main class="main">
+
+        <div class="cards">
+            <div class="card">Users: 120</div>
+            <div class="card">Sales: $5400</div>
+            <div class="card">Orders: 210</div>
+        </div>
+
+        <h3 style="margin-top:30px;">Users Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User Name</th>
+                </tr>
+            </thead>
+            <tbody id="userTable">
+                <tr><td>1</td><td>Ahmad</td></tr>
+                <tr><td>2</td><td>Sara</td></tr>
+                <tr><td>3</td><td>Omar</td></tr>
+                <tr><td>4</td><td>Lana</td></tr>
+                <tr><td>5</td><td>Khaled</td></tr>
+            </tbody>
+        </table>
+
+    </main>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Add User</h3>
+            <input type="text" id="userInput" placeholder="user name">
+            <div style="margin-top:15px;">
+                <button id="saveUser">Save</button>
+                <button id="closeModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
