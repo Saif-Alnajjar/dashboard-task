@@ -5,19 +5,24 @@ let saveBtn = document.getElementById("saveUser");
 let inputUser = document.getElementById("userInput");
 let tableUsers = document.getElementById("userTable");
 
-let count = 5;
+let count = tableUsers.rows.length;  // عدد الصفوف = عدد المستخدمين
 
-// لما اضغط من فوق لفتح المودال
+// تحديث الرقم في الكارد
+function updateUserCount(){
+    document.querySelector(".card").innerText = "Users: " + count;
+}
+
+// أول تحديث عند بدء الصفحة
+updateUserCount();
+
 addBtn.onclick = function(){
     modal.style.display = "flex";
 }
 
-// زر الاغلاق
 closeBtn.onclick = function(){
     modal.style.display = "none"
 }
 
-// لما اضغط على save يضيف المستخدم
 saveBtn.onclick = function(){
     let val = inputUser.value;
     if(val !== ""){
@@ -26,12 +31,13 @@ saveBtn.onclick = function(){
         row.innerHTML = "<td>" + count + "</td><td>" + val + "</td>";
         tableUsers.appendChild(row);
 
+        updateUserCount(); // ← تحديث العدد
+
         inputUser.value = "";
         modal.style.display = "none";
     }
 }
 
-// اغلاق اذا ضغطت برة الصندوق
 modal.onclick = function(e){
     if(e.target === modal){
         modal.style.display = "none"
